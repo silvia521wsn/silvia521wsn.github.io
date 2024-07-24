@@ -1,68 +1,142 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>テストページ</title>
-    <style>
-        body {
-            color: blue;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>テストページ</title>
+<style>
+    body {
+        background-color: turquoise;
+        color: blue;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    .container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    a {
+        color: darkgray;
+        text-decoration: none;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .section {
+        margin-top: 20px;
+        width: 100%;
+        text-align: left;
+    }
+    .section h2 {
+        color: darkgray;
+        border-bottom: 2px solid darkgray;
+        padding-bottom: 5px;
+    }
+    .section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .section ul li {
+        background-color: #f0f8ff;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 600px) {
+        .container {
+            width: 100%;
+            padding: 10px;
         }
-        h1 {
-            margin-bottom: 20px;
+        .profile-pic {
+            width: 100px;
+            height: 100px;
         }
-        a {
-            margin-bottom: 20px;
-            color: inherit;
-        }
-        p {
-            margin-bottom: 40px;
-        }
-        #catImage {
-            max-width: 100%;
-            max-height: 80vh;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <h1>ねねのページ</h1>
-    <a href="https://www.neec.ac.jp">日本工学院</a>
-    <p>作成者:WANG SHINING</p>
-    
-    <div>
-        <img id="catImage" src="" alt="Random Cat">
-        <button onclick="getRandomCat()">ネコ</button>
+    <div class="container">
+        <div class="profile-pic">
+            <img src="profile-picture.jpg" alt="Profile Picture">
+        </div>
+        <h1>ねねのページ</h1>
+        <a href="https://www.neec.ac.jp">日本工学院</a>
+        <p>作成者：WANG SHINING</p>
+        
+        <div class="section">
+            <h2>概要</h2>
+            <p>ここに自己紹介文を書いてください。</p>
+        </div>
+        
+        <div class="section">
+            <h2>スキル</h2>
+            <ul>
+                <li>スキル1</li>
+                <li>スキル2</li>
+                <li>スキル3</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>経験</h2>
+            <ul>
+                <li>
+                    <strong>会社名1</strong><br>
+                    職位1 (開始年 - 終了年)<br>
+                    ここに職務内容の詳細を書いてください。
+                </li>
+                <li>
+                    <strong>会社名2</strong><br>
+                    職位2 (開始年 - 終了年)<br>
+                    ここに職務内容の詳細を書いてください。
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>学歴</h2>
+            <ul>
+                <li>
+                    <strong>学校名1</strong><br>
+                    学位1 (卒業年)<br>
+                    ここに学位の詳細を書いてください。
+                </li>
+                <li>
+                    <strong>学校名2</strong><br>
+                    学位2 (卒業年)<br>
+                    ここに学位の詳細を書いてください。
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <script>
-        function getRandomCat() {
-            fetch('https://api.thecatapi.com/v1/images/search')
-                .then(response => response.json())
-                .then(data => {
-                    const catImageUrl = data[0].url;
-                    document.getElementById('catImage').src = catImageUrl;
-                })
-                .catch(error => console.error('Error fetching cat image:', error));
-        }
-
-        // Load a random cat image on initial load
-        getRandomCat();
-    </script>
 </body>
 </html>
