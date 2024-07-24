@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>テストページ</title>
+    <style>
+        body {
+            color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        a {
+            margin-bottom: 20px;
+            color: inherit;
+        }
+        p {
+            margin-bottom: 40px;
+        }
+        #catImage {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<title>テストページ</title>
-<body style="color:blue;">
-<h1>サンプルページ</h1>
-<a href="https://www.neec.ac.jp">日本工学院</a>
-<p>作成者:WANG SHINING</p>
+<body>
+    <h1>サンプルページ</h1>
+    <a href="https://www.neec.ac.jp">日本工学院</a>
+    <p>作成者:WANG SHINING</p>
+    
+    <div>
+        <img id="catImage" src="" alt="Random Cat">
+        <button onclick="getRandomCat()">ネコ</button>
+    </div>
+
+    <script>
+        function getRandomCat() {
+            fetch('https://api.thecatapi.com/v1/images/search')
+                .then(response => response.json())
+                .then(data => {
+                    const catImageUrl = data[0].url;
+                    document.getElementById('catImage').src = catImageUrl;
+                })
+                .catch(error => console.error('Error fetching cat image:', error));
+        }
+
+        // Load a random cat image on initial load
+        getRandomCat();
+    </script>
 </body>
 </html>
