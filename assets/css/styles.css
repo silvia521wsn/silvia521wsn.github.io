@@ -1,0 +1,151 @@
+body {
+    text-align: center; /* ページ全体のテキストを中央揃え */
+    background-color: #a8f5f2;
+}
+
+nav ul {
+    list-style-type: none; /* リストの点を非表示 */
+    padding: 0;
+    margin: 0 auto; /* リスト全体を中央に揃える */
+    display: inline-block; /* リンクを中央揃えにする */
+}
+
+nav ul li {
+    display: inline; /* リスト項目を横並びに */
+    margin-right: 15px; /* リンク間のスペース */
+}
+
+nav ul li a {
+    text-decoration: none; /* 下線を削除 */
+    color: #333; /* リンクの色 */
+    padding: 8px 12px;
+}
+
+nav ul li a:hover {
+    background-color: #f0f8ff; /* ホバー時の背景色 */
+    border-radius: 5px; /* 角を丸める */
+}
+
+
+header {
+    padding: 10px;
+    margin-top: 10px;
+    background: rgba(247, 247, 247, 0.514);
+    border-radius: 8px;
+}
+main {
+    padding: 10px;
+    margin-top: 10px;
+    background: rgba(247, 247, 247, 0.514);
+    border-radius: 8px;
+}
+aside {
+    padding: 10px;
+    margin-top: 10px;
+    background: rgba(247, 247, 247, 0.514);
+    border-radius: 8px;
+}
+footer {
+    padding: 10px;
+    margin-top: 10px;
+    background: rgba(247, 247, 247, 0.514);
+    border-radius: 8px;
+}
+
+body.index {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.characters {
+    background-image: url('../images/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.news {
+    background-image: url('../images/background2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.quests {
+    background-image: url('../images/background3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.weapons {
+    background-image: url('../images/background4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.about {
+    background-image: url('../images/background5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.contact {
+    background-image: url('../images/background6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.map {
+    background-image: url('../images/background7.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.photo-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 200px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    padding: 10px;
+    font-size: 14px;
+}
