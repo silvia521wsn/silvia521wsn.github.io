@@ -109,43 +109,29 @@ body.map {
     background-attachment: fixed;
 }
 
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-h1 {
-    margin-top: 20px;
-}
-
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
-    gap: 15px;
+    padding: 30px;
+    gap: 50px;
 }
 
 .photo-item {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 200px;
+    width: 900px;
 }
 
 .photo-item img {
     width: 100%;
-    height: auto;
+    height: 540px;
     display: block;
 }
 
 .caption {
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
