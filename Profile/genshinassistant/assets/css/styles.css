@@ -2,30 +2,57 @@ body {
     text-align: center; /* ページ全体のテキストを中央揃え */
     background-color: #a8f5f2;
 }
-
+nav {
+    background-color: #fbfbfb8c;
+    width: 100%;
+}
 nav ul {
-    list-style-type: none; /* リストの点を非表示 */
+    list-style-type: none;
     padding: 0;
-    margin: 0 auto; /* リスト全体を中央に揃える */
-    display: inline-block; /* リンクを中央揃えにする */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 項目を自動で折り返し */
 }
 
 nav ul li {
     display: inline; /* リスト項目を横並びに */
     margin-right: 15px; /* リンク間のスペース */
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
-    text-decoration: none; /* 下線を削除 */
-    color: #333; /* リンクの色 */
-    padding: 8px 12px;
+    display: block;
+    padding: 15px 20px;
+    color: rgb(35, 36, 35);
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
 }
 
 nav ul li a:hover {
-    background-color: #f0f8ff; /* ホバー時の背景色 */
-    border-radius: 5px; /* 角を丸める */
+    background-color: #b5b5b578;
+    border-radius: 7px; /* 角を丸める */
 }
+        /* 画面サイズが狭い場合にナビゲーションを縦に並べる */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li a {
+                padding: 10px 0;
+                font-size: 0.9em;
+            }
+        }
 
+.photo img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 header {
     padding: 10px;
@@ -108,13 +135,33 @@ body.map {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+body.gallery {
+    background-image: url('../images/background8.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+body.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr; /* 一行显示一张照片 */
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px; /* 设置最大宽度，确保在宽屏上不会太大 */
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .photo-item {
@@ -122,16 +169,22 @@ body.map {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .photo-item img {
     width: 100%;
-    height: 540px;
-    display: block;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s;
 }
 
 .caption {
     padding: 10px;
+    text-align: center;
     font-size: 16px;
+    font-weight: bold;
+    min-height: 30px;
 }
