@@ -1,6 +1,7 @@
 body {
     text-align: center; /* ページ全体のテキストを中央揃え */
     background-color: #a8f5f2;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 nav {
     background-color: #fbfbfb8c;
@@ -79,10 +80,13 @@ aside {
     border-radius: 8px;
 }
 footer {
-    padding: 10px;
-    margin-top: 10px;
-    background: rgba(247, 247, 247, 0.514);
-    border-radius: 8px;
+    padding: 20px;
+    color: #c3fe00;
+    font-size: 0.9em;
+    text-shadow: 0 0 5px #666;
+}
+footer p {
+    margin: 0;
 }
 
 body.index {
@@ -208,7 +212,7 @@ body.gallery-container {
 .link-container a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    background-color: #fffb0b;
+    background-color: #e7e7e777;
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -218,7 +222,7 @@ body.gallery-container {
 
 /* 鼠标悬停效果 */
 .link-container a:hover {
-    background-color: #46a00e;
+    background-color: #fbff00;
 }
 
 /* 在小屏幕上自适应样式 */
