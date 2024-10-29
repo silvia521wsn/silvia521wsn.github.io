@@ -53,7 +53,13 @@ nav ul li a:hover {
     object-fit: cover;
     border-radius: 5px;
 }
-
+.sticker img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
 header {
     padding: 10px;
     margin-top: 10px;
@@ -187,4 +193,37 @@ body.gallery-container {
     font-size: 16px;
     font-weight: bold;
     min-height: 30px;
+}
+
+/* 整体布局 */
+.link-container {
+    display: flex;
+    flex-wrap: wrap; /* 允许链接自动换行 */
+    gap: 10px; /* 链接之间的间距 */
+    justify-content: center; /* 居中对齐 */
+    padding: 10px;
+}
+
+
+.link-container a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #fffb0b;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+/* 鼠标悬停效果 */
+.link-container a:hover {
+    background-color: #46a00e;
+}
+
+/* 在小屏幕上自适应样式 */
+@media (max-width: 600px) {
+    .link-container a {
+        flex: 1 1 100%; /* 在小屏幕上链接占满整行 */
+    }
 }
