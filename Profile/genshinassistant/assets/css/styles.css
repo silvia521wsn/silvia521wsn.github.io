@@ -231,3 +231,61 @@ body.gallery-container {
         flex: 1 1 100%; /* 在小屏幕上链接占满整行 */
     }
 }
+
+
+/*キャラクター一覧*/
+/* 表格样式 */
+.character-table {
+    width: 80%;
+    border-collapse: collapse; /* 移除单元格间的空隙 */
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;/* 水平居中 */
+}
+
+/* 表头样式 */
+.character-table thead th {
+    background-color: #00a99e; /* 表头背景颜色 */
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;/* 水平居中 */
+}
+
+/* 表格行样式 */
+.character-table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;/* 水平居中 */
+}
+
+/* 奇偶行区分样式 */
+.character-table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* 奇数行背景颜色 */
+}
+
+.character-table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* 偶数行背景颜色 */
+}
+
+/* 鼠标悬停行高亮 */
+.character-table tbody tr:hover {
+    background-color: #fff600;
+}
+
+/* 头像样式 */
+.avatar {
+    width: 60px; /* 设置头像容器宽度 */
+    height: 60px; /* 设置头像容器高度 */
+    border-radius: 20%; /* 实现圆形效果 */
+    overflow: hidden; /* 隐藏超出边界的内容 */
+    margin: 0 auto; /* 居中对齐 */
+    border: 3px solid #d1d1d1; /* 添加外边框 */
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片比例裁剪 */
+    display: block;
+}
