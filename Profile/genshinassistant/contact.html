@@ -8,9 +8,13 @@
 </head>
 <body class="contact">
     <header>
-        <p>✦作成者:WANG SHINING <br>✦学籍番号:K024C2100</p>
+        <p>✦作成者: WANG SHINING <br>✦学籍番号: K024C2100</p>
         <h1>原神アシスタント</h1>
-        <nav><ul><li><a href="index.html">ホームに戻る</a></li></ul></nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホームに戻る</a></li>
+            </ul>
+        </nav>
         <nav>
             <ul>
                 <li><a href="pages/news.html">最新ニュース</a></li>
@@ -29,13 +33,84 @@
             <h2>お問い合わせ</h2>
             <p>ご質問やご要望がありましたら、お気軽にお問い合わせください。</p>
             <div class="sticker">
-            <img src="./assets/images/kachina.png" alt="kachina" width="500" height="350">
+                <img src="./assets/images/kachina.png" alt="kachina" width="500" height="350">
             </div>
             <div class="link-container">
                 <a href="https://silvia521wsn.github.io/" target="_blank">個人サイト</a>
+            </div>
+            <h2>コンタクトフォーム</h2>
+            <form name="inquiry" id="id_inquiry" action="#" method="post" 
+                onSubmit="return submitWarning();" onReset="return resetWarning();">
+                <dl>
+                    <dt>●表題<span class="must">※</span></dt>
+                    <dd>
+                        <div class="class_subject">
+                            <label><input type="checkbox" name="subject[]" value="応援メッセージ"> 応援メッセージ</label>
+                            <label><input type="checkbox" name="subject[]" value="質問"> 質問</label>
+                            <label><input type="checkbox" name="subject[]" value="その他"> その他</label>
+                        </div>
+                    </dd>
+                    <dt><label for="id_name">●氏名</label><span class="must">※</span></dt>
+                    <dd>
+                        <input type="text" name="name" id="id_name" size="30" placeholder="蒲田 一郎" required>
+                    </dd>
+                    <dt><label for="id_kana">●ふりがな</label><span class="must">※</span></dt>
+                    <dd>
+                        <input type="text" name="kana" id="id_kana" size="30" placeholder="かまた いちろう" required>
+                    </dd>
+                    <dt><label for="id_email">●メールアドレス</label><span class="must">※</span></dt>
+                    <dd>
+                        <input type="email" name="email" id="id_email" size="40" placeholder="k.i@it-neec.jp" required>
+                    </dd>
+                    <dt><label for="id_mobile_tel">●電話</label></dt>
+                    <dd>
+                        <input type="tel" name="mobile_tel" id="id_mobile_tel" placeholder="000-0000-0000">
+                    </dd>
+                    <dt>●性別</dt>
+                    <dd>
+                        <label><input type="radio" name="gender" value="男"> 男</label>
+                        <label><input type="radio" name="gender" value="女"> 女</label>
+                    </dd>
+                    <dt><label for="id_send_date">●送信日</label></dt>
+                    <dd>
+                        <input type="date" name="send_date" id="id_send_date">
+                    </dd>
+                    <dt><label for="id_relationship">●学校との関わり</label></dt>
+                    <dd>
+                        <select name="relationship" id="id_relationship">
+                            <option value="">選択してください</option>
+                            <option value="卒業生">卒業生</option>
+                            <option value="在校生">在校生</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </dd>
+                    <dt><label for="id_message">●メッセージ</label></dt>
+                    <dd>
+                        <textarea name="message" id="id_message" cols="50" rows="10" placeholder="ここにメッセージを入力してください" required></textarea>
+                    </dd>
+                </dl>
+                <p class="button">
+                    <input type="button" class="send" value="確認" onClick="onButtonClick();">
+                    <input type="reset" value="リセット">
+                    <input type="submit" class="send" value="送信">
+                </p>
+            </form>
+            <hr>
+            <div id="output">
+                <p>用件: <span id="span_subject"></span></p>
+                <p>氏名: <span id="span_name"></span></p>
+                <p>ふりがな: <span id="span_kana"></span></p>
+                <p>メール: <span id="span_email"></span></p>
+                <p>電話: <span id="span_mobile_tel"></span></p>
+                <p>性別: <span id="span_gender"></span></p>
+                <p>送信日: <span id="span_send_date"></span></p>
+                <p>学校との関わり: <span id="span_relationship"></span></p>
+                <p>メッセージ: <br><span id="span_message"></span></p>
+            </div>
         </section>
-        
     </main>
     <footer>
-        <p>© 2024 Shining Wang. All Rights Reserved. </p>
+        <p>© 2024 Shining Wang. All Rights Reserved.</p>
     </footer>
+</body>
+</html>
