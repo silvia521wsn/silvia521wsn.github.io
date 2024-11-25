@@ -13,26 +13,26 @@ $(function(){
 
 /* 送信内容を確認する */
 function onButtonClick() {
-	const subjects = [];
 	const target = document.getElementById("id_inquiry");
-	for (let i=0; i < target.subject.length; i++) {
-		if (target.subject[i].checked) {
-			subjects.push(target.subject[i].value);
-		}
-	}
-	document.getElementById("span_subject").textContent = subjects;
-	document.getElementById("span_name").textContent  = target.name.value;
-	document.getElementById("span_kana").textContent  = target.kana.value;
-	document.getElementById("span_email").textContent  = target.email.value;
-	document.getElementById("span_mobile_tel").textContent  = target.mobile_tel.value;
-	for (let i=0; i < target.gender.length; i++) {
-		if (target.gender[i].checked) {
-			document.getElementById("span_gender").textContent = target.gender[i].value;
-		}
-	}
-	document.getElementById("span_send_date").textContent  = target.send_date.value;
-	document.getElementById("span_relationship").textContent  = target.relationship.value;
-	document.getElementById("span_message").textContent  = target.message.value;
+
+	// 表題を取得
+	const subjects = Array.from(target.querySelectorAll('input[name="subject[]"]:checked')).map(el => el.value);
+	document.getElementById("span_subject").textContent = subjects.length > 0 ? subjects.join(", ") : "未選択";
+
+	// 氏名、ふりがな、メール、電話
+	document.getElementById("span_name").textContent = target.name.value || "未入力";
+	document.getElementById("span_kana").textContent = target.kana.value || "未入力";
+	document.getElementById("span_email").textContent = target.email.value || "未入力";
+	document.getElementById("span_mobile_tel").textContent = target.mobile_tel.value || "未入力";
+
+	// 性別の取得
+	const gender = target.querySelector('input[name="gender"]:checked');
+	document.getElementById("span_gender").textContent = gender ? gender.value : "未選択";
+
+	// 送信日、学校との関わり、メッセージ
+	document.getElementById("span_send_date").textContent = target.send_date.value || "未入力";
+	document.getElementById("span_relationship").textContent = target.relationship.value || "未選択";
+	document.getElementById("span_message").textContent = target.message.value || "未入力";
 }
 
 /* プルダウンリストを未選択にする */
