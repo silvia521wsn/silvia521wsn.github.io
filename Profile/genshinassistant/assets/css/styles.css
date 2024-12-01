@@ -236,7 +236,7 @@ body.gallery-container {
 /*キャラクター一覧*/
 /* 表格样式 */
 .character-table {
-    width: 80%;
+    width: 90%;
     border-collapse: collapse; /* 移除单元格间的空隙 */
     margin: 0 auto;
     font-size: 16px;
@@ -248,7 +248,7 @@ body.gallery-container {
     background-color: #00a99e; /* 表头背景颜色 */
     color: white;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     text-align: center;/* 水平居中 */
 }
 
@@ -261,11 +261,11 @@ body.gallery-container {
 
 /* 奇偶行区分样式 */
 .character-table tbody tr:nth-child(odd) {
-    background-color: #ffffff; /* 奇数行背景颜色 */
+    background-color: #ffffffa0; /* 奇数行背景颜色 */
 }
 
 .character-table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* 偶数行背景颜色 */
+    background-color: #ffffffa0; /* 偶数行背景颜色 */
 }
 
 /* 鼠标悬停行高亮 */
