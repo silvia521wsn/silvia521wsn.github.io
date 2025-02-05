@@ -290,3 +290,48 @@ body.gallery-container {
     display: block;
 }
 
+.weapon-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+.weapon-table th, .weapon-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.weapon-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+section#quests {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.598);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+section#quests h1 {
+    font-size: 24px;
+    color: #07877b;
+    border-bottom: 3px solid #07877b;
+    padding-bottom: 5px;
+}
+
+section#quests h3 {
+    font-size: 20px;
+    color: #07877b;
+    margin-top: 20px;
+}
+
+section#quests p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    border-radius: 5px;
+}
